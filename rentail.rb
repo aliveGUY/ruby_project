@@ -9,5 +9,5 @@ class Rentail
     person.rentail << self
   end
   attr_accessor :date
-  attr_reader  :vet, :book
+  attr_reader :vet, :book
 end

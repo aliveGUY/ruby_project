@@ -9,11 +9,6 @@ class Student < Person
 
   attr_accessor :classroom
 
-  def classroom=(classroom)
-    @classroom = classroom
-  end
-
-
   def play_hooky
     "¯\(ツ)/¯"
   end
