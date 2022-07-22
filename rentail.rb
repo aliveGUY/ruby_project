@@ -1,12 +1,11 @@
 class Rentail
   def initialize(date, person, book)
     @date = date
-
     @book = book
-    book.rentail << self
-
     @person = person
-    person.rentail << self
+    
+    book.save_rental(self)
+    person.save_rental(self)
   end
   attr_accessor :date
   attr_reader :vet, :book

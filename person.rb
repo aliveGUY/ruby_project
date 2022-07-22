@@ -12,6 +12,10 @@ class Person < Nameable
   attr_accessor :name, :age, :rentail
   attr_reader :parent_permission, :id
 
+  def save_rental(rental)
+    @rentail << rental unless @rentail.include?(rental)
+  end
+
   def can_use_services?
     of_age? || parent_permission
   end
