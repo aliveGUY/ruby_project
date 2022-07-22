@@ -3,7 +3,7 @@ class Rentail
     @date = date
     @book = book
     @person = person
-    
+
     book.save_rental(self)
     person.save_rental(self)
   end

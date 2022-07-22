@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require './app.rb'
+require './app'
 
 class Main
   def initialize

@@ -13,7 +13,7 @@ class App
     @classroom = Classroom.new(1)
   end
 
-  def get_books
+  def git_books
     return 'Theres no books yet' if @books.empty?
 
     @books.map.with_index do |book, index|
@@ -22,19 +22,19 @@ class App
   end
 
   def list_books
-    puts get_books
+    puts git_books
   end
 
-  def get_people
+  def git_people
     return 'Theres no people yet' if @persons.empty?
 
     @persons.map.with_index do |person, index|
-      "#{index}) [#{person.class.name}] ID: #{person.id}, Name: #{person.name}, Age: #{person.age}\n"""
+      "#{index}) [#{person.class.name}] ID: #{person.id}, Name: #{person.name}, Age: #{person.age}\n"
     end.join
   end
 
   def list_people
-    puts get_people
+    puts git_people
   end
 
   def create_person
@@ -50,7 +50,7 @@ class App
       print 'Has parent permission? [Y/N] '
       letter = gets.chomp
       permission = letter.upcase == 'Y'
-      person =  Student.new(age, @classroom, name, parent_permission: permission)
+      person = Student.new(age, @classroom, name, parent_permission: permission)
     else
       print 'Specialization: '
       specialization = gets.chomp
@@ -69,7 +69,8 @@ class App
     book = Book.new(title, author)
 
     @books.push(book)
-    puts'Book created successfully'
+
+    puts 'Book created successfully'
   end
 
   def create_rental
@@ -83,11 +84,10 @@ class App
       return
     end
 
-
-    print "\n#{get_books}Select a book from the previous list by number: "
+    print "\n#{git_books}Select a book from the previous list by number: "
     book_index = gets.chomp
 
-    print "\n#{get_people}Select a person from the previous list by number (not id): "
+    print "\n#{git_people}Select a person from the previous list by number (not id): "
     person_index = gets.chomp
 
     print 'Date: '
@@ -98,7 +98,7 @@ class App
     puts 'Rental created successfully'
   end
 
-  def get_persons
+  def git_persons
     loop
     print 'ID of person: '
     id = gets.chomp.to_i
@@ -114,11 +114,9 @@ class App
       puts 'No rentails yet'
       return
     end
-    person_index = get_persons
-  
+    person_index = git_persons
     @persons[person_index].rentail.each do |rentail|
       puts "Date: #{rentail.date}, Book: #{rentail.book} by #{rentail.author}"
-  
     end
   end
 end
