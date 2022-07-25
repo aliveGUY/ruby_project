@@ -1,5 +1,5 @@
 class Createable
-  def create(array)
+  def initialize(array)
     array << self
   end
 end
