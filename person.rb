@@ -24,6 +24,13 @@ class Person < Nameable
     name
   end
 
+  def create()
+    print 'Age: '
+    @age = gets.chomp
+    print 'Name: '
+    @name = gets.chomp
+  end
+
   private
 
   def of_age?

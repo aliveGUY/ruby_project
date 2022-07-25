@@ -10,14 +10,11 @@ class Student < Person
   attr_accessor :classroom
 
   def create(array)
-    print 'Age: '
-    @age = gets.chomp
-    print 'Name: '
-    @name = gets.chomp
+    super()
     print 'Has parent permission? [Y/N] '
     letter = gets.chomp
     @parent_permission = letter.upcase == 'Y'
-    super(array)
+    array << self
     puts 'Created new Student'
   end
   def play_hooky

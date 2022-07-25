@@ -11,13 +11,10 @@ class Teacher < Person
   end
 
   def create(array)
-    print 'Age: '
-    @age = gets.chomp
-    print 'Name: '
-    @name = gets.chomp
+    super()
     print 'Specialization: '
     @specialization = gets.chomp
-    super(array)
+    array << self
     puts 'Created new Student'
   end
 end
