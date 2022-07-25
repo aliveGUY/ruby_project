@@ -40,24 +40,7 @@ class App
   def create_person
     print 'Create student (1) or create a teacher (2) ?'
     input = gets.chomp
-
-    print 'Age: '
-    age = gets.chomp
-    print 'Name: '
-    name = gets.chomp
-
-    if input == '1'
-      print 'Has parent permission? [Y/N] '
-      letter = gets.chomp
-      permission = letter.upcase == 'Y'
-      person = Student.new(age, @classroom, name, parent_permission: permission)
-    else
-      print 'Specialization: '
-      specialization = gets.chomp
-      person = Teacher.new(age, specialization, name)
-    end
-    @persons.push(person)
-    puts 'Created new person'
+    input == '1' ?  Student.new(@classroom).create(@persons) : Teacher.new.create(@person)
   end
 
   def create_book
