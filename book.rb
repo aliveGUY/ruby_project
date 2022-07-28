@@ -1,6 +1,6 @@
 require './create'
 
-class Book < Createable
+class Book
   attr_accessor :title, :author
   attr_reader :rentals
 
@@ -18,7 +18,7 @@ class Book < Createable
     @title = gets.chomp
     print 'Author: '
     @author = gets.chomp
-    super(array)
+    array << self
     puts 'Book created successfully'
   end
 
