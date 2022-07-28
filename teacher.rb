@@ -9,6 +9,8 @@ class Teacher < Person
     puts 'Created new Teacher'
   end
 
+  attr_reader :specialization
+
   def can_use_services?
     true
   end

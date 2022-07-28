@@ -14,6 +14,9 @@ describe  Teacher do
 
     it "Has atributes: specialization, id, age, name, parent_permission, rentail" do
       expect(@teacher.id).to be_truthy
+      expect(@teacher.age).to eql "12"
+      expect(@teacher.name).to eql "name"
+      expect(@teacher.specialization).to eql("Doctor")
     end
   end
   
