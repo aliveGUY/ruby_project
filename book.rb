@@ -4,12 +4,20 @@ class Book < Createable
   attr_accessor :title, :author
   attr_reader :rentals
 
-  def initialize(array)
+  def initialize(author = 'undefined', title = 'undefined')
+    @title = title
+    @author = author
+    @rentail = []
+  end
+
+  def edit(array)
+    @title = title
+    @author = author
+
     print 'Title: '
     @title = gets.chomp
     print 'Author: '
     @author = gets.chomp
-    @rentail = []
     super(array)
     puts 'Book created successfully'
   end

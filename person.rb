@@ -1,18 +1,26 @@
 require './nameable'
 
 class Person < Nameable
-  def initialize(parent_permission: true)
+  def initialize(age = 0, name = 'undefined', parent_permission: true)
     super()
     @id = Random.rand(1..1000)
+    @name = name
+    @age = age
+    
+    @rentail = []
+  end
+  attr_accessor :name, :age, :rentail
+  attr_reader :parent_permission, :id
+
+  def edit(array)
     print 'Age: '
     @age = gets.chomp
     print 'Name: '
     @name = gets.chomp
     @parent_permission = parent_permission
-    @rentail = []
+
+    array << self
   end
-  attr_accessor :name, :age, :rentail
-  attr_reader :parent_permission, :id
 
   def save_rental(rental)
     @rentail << rental unless @rentail.include?(rental)
