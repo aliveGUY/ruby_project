@@ -6,7 +6,7 @@ describe Rentail do
   end
 
   describe "Class initialize" do
-    it "is initialized with expected methods" do
+    it "is initialized" do
       student1 = double('student') 
       person1 = double('person') 
       
