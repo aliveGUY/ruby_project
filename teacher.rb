@@ -16,8 +16,6 @@ class Teacher < Person
     super(array)
   end
 
-  attr_reader :specialization
-
   def can_use_services?
     true
   end

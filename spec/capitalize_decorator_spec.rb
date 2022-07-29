@@ -1,9 +1,9 @@
 require_relative '../capitalize_decorator'
 
 describe CapitalizeDecorator do
-  describe "#correct_name" do
-    it "Capitalize the name of the Decored object" do
-      name = "wonder woman"
+  describe '#correct_name' do
+    it 'Capitalize the name of the Decored object' do
+      name = 'wonder woman'
       person = double('person')
       allow(person).to receive(:correct_name) { name }
 

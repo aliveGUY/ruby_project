@@ -1,7 +1,7 @@
 require './create'
 
 class Rentail < Createable
-  def initialize(git_people, array, persons, books)
+  def initialize(git_people, _array, persons, books)
     print 'Select a book from the previous list by number: '
     book_index = gets.chomp
 
@@ -20,4 +20,4 @@ class Rentail < Createable
   attr_reader :vet, :book, :author
 
   def create(git_people, git_books, array, persons, books); end
-  end
+end
