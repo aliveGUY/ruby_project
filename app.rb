@@ -40,11 +40,11 @@ class App
   def create_person
     print 'Create student (1) or create a teacher (2) ?'
     input = gets.chomp
-    input == '1' ? Student.new(@classroom, @persons) : Teacher.new(@persons)
+    input == '1' ? Student.new(@classroom).edit(@persons) : Teacher.new.edit(@persons)
   end
 
   def create_book
-    Book.new(@books)
+    Book.new.edit(@books)
   end
 
   def create_rental

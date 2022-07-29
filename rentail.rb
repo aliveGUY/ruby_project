@@ -1,7 +1,7 @@
 require './create'
 
 class Rentail < Createable
-  def initialize(git_people, array, persons, books)
+  def initialize(git_people, _array, persons, books)
     print 'Select a book from the previous list by number: '
     book_index = gets.chomp
 
@@ -12,7 +12,7 @@ class Rentail < Createable
     @date = gets.chomp
     @person = persons[person_index.to_i]
     @book = books[book_index.to_i]
-    super(array)
+    super()
     @book.save_rental(self)
     @person.save_rental(self)
   end
