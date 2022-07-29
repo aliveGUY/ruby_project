@@ -20,4 +20,4 @@ class Rentail < Createable
   attr_reader :vet, :book, :author
 
   def create(git_people, git_books, array, persons, books); end
-end
+  end
